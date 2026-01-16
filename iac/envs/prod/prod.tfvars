@@ -1,3 +1,3 @@
 env       = "prod"
 region    = "us-east-1"
-vpc_cidr  = "10.20.0.0/16"
+cidr_block  = "10.20.0.0/16"
