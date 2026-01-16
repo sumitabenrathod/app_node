@@ -34,10 +34,8 @@ jobs:
       - name: Terraform Init
         run: |
           ls -la          
-          terraform init -reconfigure -backend-config=envs/dev/backend.tf
+          terraform init -backend-config=envs/dev/backend.tf
           terraform plan -var-file=envs/dev/dev.tfvars
-          # terraform apply -auto-approve -var-file=envs/dev/dev.tfvars
-          terraform destroy -auto-approve -var-file=envs/dev/dev.tfvars
                     
       - name: Terraform Validate
         run: terraform validate
