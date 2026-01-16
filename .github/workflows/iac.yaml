@@ -34,7 +34,7 @@ jobs:
       - name: Terraform Init
         run: |
           ls -la
-          cd iac/envs/dev
+          cd envs/dev
           terraform init 
           terraform plan -auto-approve -var-file=envs/dev.tfvars
           
