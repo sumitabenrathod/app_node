@@ -33,25 +33,7 @@ jobs:
           echo "AWS_REGION=${{ secrets.AWS_REGION }}" >> $GITHUB_ENV
       - name: Terraform Init
         run: |
-          # pwd
-          # ls -la
-          # rm -rf .terraform
-          # rm -f .terraform.lock.hcl
-          # cd envs
-          # ls -la
-          # cd dev
-          # ls -la
-          # rm -rf backend.tf
-          # cd ..
           ls -la
-          # cd prod
-          # ls -la
-          # rm -rf backend.tf
-          # cd ..
-          # ls -la
-          # cd ..
-          # ls -la
-          # rm -rf backend.tf
           terraform init reconfigure
 
           
