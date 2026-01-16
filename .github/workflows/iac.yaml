@@ -34,7 +34,7 @@ jobs:
       - name: Terraform Init
         run: |
           ls -la          
-          terraform -chdir=envs/dev/backend.tf init
+          terraform -chdir=envs/dev init
           
                     
       - name: Terraform Validate
