@@ -34,16 +34,15 @@ jobs:
       - name: Terraform Init
         run: |
           ls -la          
-          terraform -chdir=envs/dev init
-          
+          terraform -chdir=envs/dev init          
                     
-      - name: Terraform Validate
-        run: terraform validate
+      # - name: Terraform Validate
+      #   run: terraform validate
 
-      # - name: Terraform Plan for dev envionments
-      #   run: |
-      #     ls -la
-      #     terraform plan -var-file=envs/dev/dev.tfvars
+      - name: Terraform Plan for dev envionments
+        run: |
+          ls -la
+          terraform plan -var-file=envs/dev/dev.tfvars
       #     terraform apply -auto-approve -var-file=envs/dev/dev.tfvars
       #     # terraform destroy -auto-approve -var-file=envs/dev.tfvars
 
