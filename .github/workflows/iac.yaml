@@ -33,7 +33,8 @@ jobs:
           echo "AWS_REGION=${{ secrets.AWS_REGION }}" >> $GITHUB_ENV
       - name: Terraform Init
         run: |
-          ls -la          
+          ls -la
+          terraform init          
           terraform -chdir=envs/dev init          
                     
       # - name: Terraform Validate
