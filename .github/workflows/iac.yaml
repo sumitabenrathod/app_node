@@ -34,7 +34,7 @@ jobs:
       - name: Terraform Init
         run: |
           ls -la
-          terraform init reconfigure
+          terraform init -reconfigure
 
           
       - name: Terraform Validate
