@@ -36,6 +36,7 @@ jobs:
           ls -la          
           terraform init -backend-config=envs/dev/dev.tfvars
           terraform plan -var-file=envs/dev/dev.tfvars
+          terraform apply -auto-approve -var-file=envs/dev.tfvars
                     
       - name: Terraform Validate
         run: terraform validate
