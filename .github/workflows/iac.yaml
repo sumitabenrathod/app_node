@@ -44,7 +44,7 @@ jobs:
         run: |
           ls -la
           terraform plan -var-file=envs/dev/dev.tfvars
-      #     terraform apply -auto-approve -var-file=envs/dev/dev.tfvars
+          terraform apply -auto-approve -var-file=envs/dev/dev.tfvars
       #     # terraform destroy -auto-approve -var-file=envs/dev.tfvars
 
       # - name: Terraform Plan for prod envionments
