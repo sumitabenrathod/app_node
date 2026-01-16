@@ -34,9 +34,9 @@ jobs:
       - name: Terraform Init
         run: |
           ls -la          
-          terraform -chdir=repo init 
-          terraform -chdir=repo plan - var-file=envs/dev/dev.tfvars
-          
+          terraform init -backend-config=envs/dev/dev.tfvars
+          terraform plan -var-file=envs/dev/dev.tfvars
+                    
       - name: Terraform Validate
         run: terraform validate
 
