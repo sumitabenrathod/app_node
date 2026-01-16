@@ -43,15 +43,11 @@ jobs:
       - name: Terraform Plan for dev envionments
         run: |
           ls -la
-          # pwd
-          # cd envs
-          # ls -la
-          # cd dev
-          # ls -la
           terraform plan -var-file=envs/dev/dev.tfvars
-          # terraform apply -auto-approve -var-file=envs/dev.tfvars
+          terraform apply -auto-approve -var-file=envs/dev/dev.tfvars
           # terraform destroy -auto-approve -var-file=envs/dev.tfvars
 
       - name: Terraform Plan for prod envionments
         run: |
           terraform plan -var-file=envs/prod/prod.tfvars
+          terraform apply -auto-approve -var-file=envs/prod/prod.tfvars
