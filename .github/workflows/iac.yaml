@@ -42,7 +42,7 @@ jobs:
 
       - name: Terraform Plan for dev envionments
         run: |
-          # ls -la
+          ls -la
           # pwd
           # cd envs
           # ls -la
