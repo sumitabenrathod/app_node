@@ -52,7 +52,7 @@ jobs:
           # cd ..
           # ls -la
           # rm -rf backend.tf
-          terraform init 
+          terraform init reconfigure
 
           
       - name: Terraform Validate
