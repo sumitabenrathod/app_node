@@ -1,5 +1,5 @@
 ##########################
-##### VPC #
+##### VPC ##
 ##########################
 module "vpc" {
   source = "git::https://github.com/sumitabenrathod/terraform-aws-modules-custom.git"
