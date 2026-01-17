@@ -26,25 +26,28 @@ jobs:
           unzip terraform_1.6.6_linux_amd64.zip
           sudo mv terraform /usr/local/bin/
           terraform version
+          
       - name: Set AWS credentials
         run: |
           echo "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" >> $GITHUB_ENV
           echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> $GITHUB_ENV
           echo "AWS_REGION=${{ secrets.AWS_REGION }}" >> $GITHUB_ENV
+
       - name: Terraform Init
         run: |
           ls -la
+          cd envs/dev/
           terraform init          
-          terraform -chdir=envs/dev init          
+        
                     
-      # - name: Terraform Validate
-      #   run: terraform validate
+      - name: Terraform Validate
+        run: terraform validate
 
       - name: Terraform Plan for dev envionments
         run: |
           ls -la
-          terraform plan -var-file=envs/dev/dev.tfvars
-          terraform apply -auto-approve -var-file=envs/dev/dev.tfvars
+          terraform plan
+          
       #     # terraform destroy -auto-approve -var-file=envs/dev.tfvars
 
       # - name: Terraform Plan for prod envionments
