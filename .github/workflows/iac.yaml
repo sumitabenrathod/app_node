@@ -46,7 +46,7 @@ jobs:
       - name: Terraform Plan for dev envionments
         run: |
           ls -la
-          terraform plan -var-file=dev.tfvars
+          terraform plan -var-file=envs/dev/dev.tfvars
           
       #     # terraform destroy -auto-approve -var-file=envs/dev.tfvars
 
